@@ -1,0 +1,221 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+/* Begin Css Variables */
+:root {
+  --primary-color: #180a0a;
+  --success-color: #4bbf73;
+  --info-color: #1f9bcf;
+  --warning-color: #f0ad4e;
+  --danger-color: #d9534f;
+  --border-radius: 1px;
+}
+/* End Css Variables */
+
+/* Begin Global Rules */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* End Global Rules */
+
+/* Begin Reusable Classes */
+.buttons-container {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 15px 35px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(0.98);
+}
+.button:focus {
+  outline: none;
+}
+
+.button.success {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+.button.danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+.button.info {
+  background-color: var(--info-color);
+  border-color: var(--info-color);
+}
+.button.warning {
+  background-color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+/* End Reusable Classes */
+
+/* Begin Overlay */
+.overlay {
+  position: fixed;
+  /* visibility: hidden; */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+/* End Overlay */
+
+/* Begin Alert */
+.alert {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 150;
+  width: 450px;
+  text-align: center;
+  padding: 30px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  animation-name: popup;
+  animation-duration: 0.3s;
+}
+.alert .alert-icon-container {
+  display: flex;
+  justify-content: center;
+}
+.alert .alert-icon-container .alert-icon-circle {
+  width: 80px;
+  height: 80px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+}
+.alert .alert-icon-container .alert-icon-circle i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+.alert .alert-title {
+  margin: 10px 0px 0px;
+}
+.alert.success .alert-icon-container {
+  color: var(--success-color);
+}
+.alert.success .alert-icon-container .alert-icon-circle {
+  border-color: var(--success-color);
+}
+
+.alert.danger .alert-icon-container {
+  color: var(--danger-color);
+}
+.alert.danger .alert-icon-container .alert-icon-circle {
+  border-color: var(--danger-color);
+}
+
+.alert.info .alert-icon-container {
+  color: var(--info-color);
+}
+.alert.info .alert-icon-container .alert-icon-circle {
+  border-color: var(--info-color);
+}
+
+.alert.warning .alert-icon-container {
+  color: var(--warning-color);
+}
+.alert.warning .alert-icon-container .alert-icon-circle {
+  border-color: var(--warning-color);
+}
+/* End Alert */
+
+/* Begin Dialog */
+.dialog {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 150;
+  width: 450px;
+  text-align: center;
+  padding: 30px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  animation-name: popup;
+  animation-duration: 0.3s;
+}
+.dialog .dialog-icon-container {
+  display: flex;
+  justify-content: center;
+}
+.dialog .dialog-icon-container .dialog-icon-circle {
+  width: 80px;
+  height: 80px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+}
+.dialog .dialog-icon-container .dialog-icon-circle i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+.dialog .dialog-title {
+  margin: 10px 0px 0px;
+}
+.dialog .dialog-buttons-container button:first-child {
+  margin-right: 5px;
+}
+.dialog .dialog-buttons-container button:last-child {
+  margin-left: 5px;
+}
+/* End Dialog */
+
+/* Begin Animations */
+@keyframes popup {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+/* End Animations */
+
+/* Begin Media Query */
+@media (max-width: 480px) {
+  .alert,
+  .dialog {
+    width: 340px;
+    font-size: 14px;
+  }
+}
+/* End Media Query */
