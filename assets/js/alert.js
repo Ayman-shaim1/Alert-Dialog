@@ -1,15 +1,13 @@
 class Alert {
-  static Show = (obj) => {
-    const {
-      type,
-      title,
-      textContent,
-      buttonText,
-      buttonColor,
-      buttonClasses,
-      icon,
-    } = obj;
-
+  static Show = ({
+    type,
+    title,
+    textContent,
+    buttonText,
+    buttonColor,
+    buttonClasses,
+    icon,
+  }) => {
     const icons = [
       {
         type: "danger",

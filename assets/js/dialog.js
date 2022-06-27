@@ -1,19 +1,17 @@
 class Dialog {
-  static Show = (obj) => {
-    const {
-      icon,
-      title,
-      textContent,
-      buttonYesColor,
-      buttonYesText,
-      buttonYesClasses,
-      buttonNoColor,
-      buttonNoText,
-      buttonNoClasses,
-      onYes,
-      onNo,
-    } = obj;
-
+  static Show = ({
+    icon,
+    title,
+    textContent,
+    buttonYesColor,
+    buttonYesText,
+    buttonYesClasses,
+    buttonNoColor,
+    buttonNoText,
+    buttonNoClasses,
+    onYes,
+    onNo,
+  }) => {
     const overlay = document.createElement("overlay");
     const dialog = document.createElement("div");
     const dialogIconContainer = document.createElement("div");
